@@ -1,17 +1,17 @@
 ## Caching the Inverse of a Matrix
 
 ## This function creates a special "matrix" object that can cache its inverse.
-makeCacheMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(x = matrix()) {  #  it takes an argument x of type matrix
     m <- NULL
     set <- function(y) {
         x <<- y
         m <<- NULL
     }
     get <- function() x
-    setInverse <- function(solve) m <<- solve
+    setInverse <- function(solve) m <<- solve # the <<- operator can be used to assign a value to an object in an environment that is different from the current environment. 
     getInverse <- function() m
-    list(set = set, get = get,
-         setInverse = setInverse,
+    list(set = set, get = get,    # it returns a list with 4 list items  
+         setInverse = setInverse, # they are actually 4 functions wrapped in a list
          getInverse = getInverse)
 }
 
